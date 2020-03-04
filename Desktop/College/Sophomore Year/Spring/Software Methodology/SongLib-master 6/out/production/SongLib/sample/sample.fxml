@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="layout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <top>
+      <Label text="Song Library" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <VBox prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <HBox alignment="BASELINE_CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="SongTextField" promptText="Song" />
+                        <TextField fx:id="ArtistTextField" promptText="Artist" />
+                        <TextField fx:id="AlbumTextField" promptText="Album" />
+                        <TextField fx:id="YearTextField" promptText="Year" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="AddButton" mnemonicParsing="false" onAction="#addButtonClicked" text="Add">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin></Button>
+                        <Button fx:id="ClearButton" mnemonicParsing="false" onAction="#clearButtonClicked" text="Clear">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="SongLabel" maxWidth="1.7976931348623157E308" text="Song:" />
+                  <Label fx:id="ArtistLabel" maxWidth="1.7976931348623157E308" text="Artist:" />
+                  <Label fx:id="AlbumLabel" maxWidth="1.7976931348623157E308" text="Album:" />
+                  <Label fx:id="YearLabel" maxWidth="1.7976931348623157E308" text="Year:" />
+               </children>
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+   <left>
+      <VBox prefHeight="383.0" prefWidth="258.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="SongListView" onMouseClicked="#selectSongFromListView" prefHeight="400.0" prefWidth="200.0" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="EditButton" mnemonicParsing="false" onAction="#editButtonClicked" text="Edit">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="DltButton" mnemonicParsing="false" onAction="#deleteButtonClicked" text="Delete">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+</BorderPane>
